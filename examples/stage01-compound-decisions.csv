@@ -1,0 +1,5 @@
+compound_key,compound_name_preferred,name_authority,include_compound,include_reason
+PUBCHEM:1111,Compound alpha,Dictionary of Natural Products (synthetic fixture),TRUE,retained by TCMSP rule
+PUBCHEM:9999,Compound excluded,Dictionary of Natural Products (synthetic fixture),FALSE,excluded by TCMSP rule
+PUBCHEM:2222,Compound beta,Dictionary of Natural Products (synthetic fixture),TRUE,retained by SYMMAP rule
+PUBCHEM:3333,Compound gamma,Dictionary of Natural Products (synthetic fixture),TRUE,literature-supported HERB supplement

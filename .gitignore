@@ -1,0 +1,24 @@
+examples/*-output/
+
+# Real database exports and generated case outputs are local validation evidence.
+# Publish them only after confirming source terms and user authorization.
+case-tests/**/01_raw/
+case-tests/**/02_curated/
+case-tests/**/03_analysis/
+case-tests/**/04_figures/
+case-tests/**/input/
+case-tests/**/validation/
+case-tests/**/preflight/
+case-tests/**/stage01-inputs/
+case-tests/**/stage01-output*/
+case-tests/**/tcmsp-only-inputs*/
+case-tests/**/tcmsp-only-stage01*/
+case-tests/**/tcmsp_compound_evidence.csv
+
+# Generated framework validation tables; retain only human-readable summary logs.
+validation/stage01-*/
+
+# Local runtime/build artifacts
+*.log
+.Rhistory
+.RData

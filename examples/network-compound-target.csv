@@ -1,0 +1,6 @@
+Herb_name,Herb_code,Compound_name,PubChem_CID,Mol_ID,Gene_symbol
+Herb A,ha,Quercetin,5280343,MOL000098,AKT1
+Herb A,ha,Quercetin,5280343,MOL000098,TNF
+Herb A,ha,Alpha compound,1111,A001,IL6
+Herb B,hb,Beta compound,2222,B001,TP53
+Herb B,hb,Beta compound,2222,B001,TP53

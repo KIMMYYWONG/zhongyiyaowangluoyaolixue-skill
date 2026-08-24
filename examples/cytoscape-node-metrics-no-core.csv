@@ -1,0 +1,4 @@
+shared name,BetweennessCentrality,ClosenessCentrality,Degree
+AKT1,0.10,0.90,3
+TP53,0.90,0.10,3
+IL6,0.50,0.50,3

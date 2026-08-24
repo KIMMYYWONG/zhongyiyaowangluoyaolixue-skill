@@ -1,0 +1,4 @@
+Module,Snapshot_ID,Check_number,Check_name,Test_or_evidence,Expected,Observed,Status,Correction,Rerun_required,Reviewer,Checked_at
+Stage_01_drug_targets,,1,Schema_and_scientific_rule,,,,PENDING,,TRUE,,
+Stage_01_drug_targets,,2,Automatic_integrity_and_negative_test,,,,PENDING,,TRUE,,
+Stage_01_drug_targets,,3,Cross_module_and_reproducibility,,,,PENDING,,TRUE,,

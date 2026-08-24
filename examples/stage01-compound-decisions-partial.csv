@@ -1,0 +1,2 @@
+source_compound_key,compound_key,compound_name_preferred,name_authority,identity_match_method,identity_match_status,include_compound,include_reason
+PUBCHEM:1111,PUBCHEM:1111,Compound alpha,Dictionary of Natural Products (synthetic fixture),PubChem CID,exact,TRUE,partial-decision regression fixture

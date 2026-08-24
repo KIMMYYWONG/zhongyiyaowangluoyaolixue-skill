@@ -1,0 +1,5 @@
+source,source_herb_id,source_ingredient_id,herb_normalized_cn,herb_pinyin,compound_name_raw,ob,dl,pubchem_cid_raw,cas_raw,inchi_key_raw,evidence_type,source_url,access_date
+TCMSP,H001,MOL001,Herb A,Herb A,Compound alpha,45,0.25,1111,11-11-1,,database,https://example.invalid/tcmsp/1,2026-08-24
+TCMSP,H001,MOL002,Herb A,Herb A,Compound excluded,12,0.10,9999,99-99-9,,database,https://example.invalid/tcmsp/2,2026-08-24
+SYMMAP,SMHB001,ING001,Herb A,Herb A,Compound beta,35,,2222,22-22-2,,database,https://example.invalid/symmap/1,2026-08-24
+HERB2,HB001,HERBING001,Herb A,Herb A,Compound gamma,,,3333,33-33-3,,literature,https://example.invalid/herb/1,2026-08-24

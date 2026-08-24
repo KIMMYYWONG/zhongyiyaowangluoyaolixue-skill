@@ -1,0 +1,202 @@
+project:
+  id: "study-id"
+  label: "Formula and disease study"
+  intended_use: "exploratory"
+  output_language: "zh-CN"
+
+research_object:
+  formula_name: ""
+  herbs: []
+  disease_query: ""
+  disease_name: ""
+  disease_id: ""
+  species_name: "Homo sapiens"
+  species_taxon: 9606
+
+drug_targets:
+  sources:
+    - "TCMNP-TCMSP"
+    - "SYMMAP"
+    - "HERB2"
+  compound_rules:
+    tcmsp:
+      ob_min: 30
+      dl_min: 0.18
+    symmap:
+      ob_min: 30
+      dl_min: null
+    herb2:
+      apply_ob_dl: false
+      require_literature_reference: true
+      inclusion_rule: "literature-supported supplementary relationships"
+      excessive_target_strategy: "TCMSP target overlap plus reviewed representative ingredients"
+      excessive_target_threshold: null
+      representative_ingredient_count: null
+      representative_ingredient_selection: "manual review with recorded rationale"
+  allow_evidence_based_additions: true
+  target_identifier: "HGNC symbol"
+  compound_name_authority: "Dictionary of Natural Products or user-confirmed authority"
+  target_standardization:
+    database: "UniProt"
+    organism: "Homo sapiens"
+    organism_taxon: 9606
+    prefer_reviewed: true
+    ambiguous_mapping_requires_review: true
+
+disease_targets:
+  sources:
+    - "GeneCards"
+    - "DrugBank"
+    - "CTD"
+    - "Open Targets"
+    - "DISGENET"
+    - "OMIM"
+  require_disease_confirmation: true
+  source_policy_file: "disease-source-policy.csv"
+  conventional_score_rule: "within-query median for score-bearing sources"
+  preserve_curated_without_score: true
+  broad_set_rule: "union after source-specific screening"
+  recommended_set_rule: "curated or direct evidence, or support from at least two databases"
+  primary_intersection_set: "recommended"
+
+intersection:
+  identifier: "HGNC symbol"
+
+ppi:
+  source: "STRING"
+  species_name: "Homo sapiens"
+  species_taxon: 9606
+  required_score: 400
+  minimum_interaction_score: 0.4
+  network_type: "functional association"
+  add_neighbor_nodes: 0
+  hide_disconnected_nodes: true
+  first_pass_outputs:
+    - "high-resolution PNG"
+    - "short interaction TSV"
+  second_pass_on_core_targets: true
+
+core_targets:
+  metrics:
+    - "betweenness"
+    - "closeness"
+    - "degree"
+  metric_source: "Cytoscape NetworkAnalyzer undirected network"
+  selection_rule: "all three metrics strictly greater than their separate medians"
+  comparison: ">"
+
+network:
+  layers:
+    - "Formula->Drug"
+    - "Drug->Ingredient"
+    - "Ingredient->Gene"
+    - "Disease->Gene"
+  shared_ingredient_assignment: "must choose complete or filtered; never mix"
+  ingredient_identity_priority:
+    - "InChIKey"
+    - "PubChem CID"
+    - "CAS"
+    - "standardized compound name"
+  unique_ingredient_numbering: "lowercase herb code plus sequence, e.g. bs1"
+  shared_ingredient_numbering: "S plus sequence, e.g. S1"
+  edge_columns:
+    - "source"
+    - "target"
+    - "interaction"
+  node_columns:
+    - "term"
+    - "type"
+    - "label"
+    - "herbs"
+
+sankey:
+  default_layers:
+    - "Ingredient"
+    - "Core Gene"
+    - "KEGG Pathway"
+  relationship_unit: "one unique ingredient-gene-pathway triple"
+  ingredient_display_max: 30
+  gene_display_max: 30
+  pathway_input: "frozen nonredundant KEGG display table"
+  plotting_package: "ggsankeyfier"
+  formats:
+    - "png"
+    - "pdf"
+  dpi: 600
+
+enrichment:
+  input_target_sets:
+    - id: "intersection_targets"
+      label: "Drug-disease intersection targets"
+      required: true
+      output_subdirectory: "05A_intersection_GO_KEGG"
+    - id: "core_targets"
+      label: "Cytoscape core targets"
+      required: true
+      output_subdirectory: "05B_core_GO_KEGG"
+  prohibit_cross_set_pooling: true
+  gene_id: "ENTREZID converted from HGNC symbol with org.Hs.eg.db"
+  background: "clusterProfiler default annotated universe (universe = NULL)"
+  optional_custom_background: "allowed only when explicitly configured and must contain every core target"
+  organism: "Homo sapiens"
+  organism_code: "hsa"
+  go_source: "clusterProfiler::enrichGO with org.Hs.eg.db"
+  kegg_source: "clusterProfiler::enrichKEGG with organism hsa"
+  allow_metascape_substitution: false
+  go_ontologies:
+    - "BP"
+    - "MF"
+    - "CC"
+  over_representation_test: "clusterProfiler over-representation analysis"
+  p_adjust_method: "BH"
+  pvalue_max: 0.05
+  adjusted_pvalue_max: 0.05
+  qvalue_max: 1.0
+  significance_for_requested_figures: "raw p-value < 0.05; flag BH-adjusted p-value < 0.05"
+  display_ranking: "BH-adjusted p-value, raw p-value, then descending count"
+  go_redundancy_method: "greedy gene-set Jaccard overlap removal at 0.7 within BP, MF, and CC candidate pools"
+  online_timeout_seconds: 60
+  go_redundancy_candidate_pool_per_ontology: 200
+  kegg_redundancy_method: "greedy gene-set Jaccard overlap removal at 0.7"
+  go_display_top_n_total: 15
+  go_display_balance: "up to 5 terms each from BP, MF, and CC, then fill remaining slots by rank"
+  kegg_display_top_n: 30
+  figure_formats:
+    - "png"
+    - "pdf"
+  figure_dpi: 600
+  pharmacology_theme_keywords_file: "pharmacology-theme-keywords.csv"
+  interpretation_rule: "report only themes matched to actually enriched terms; use association language"
+  downstream_kegg_table: "must explicitly choose intersection or core result; never infer or mix"
+
+retrieval_control:
+  webpage_control_when_structured_lookup_fails: true
+  preserve_requested_database: true
+  preserve_frozen_query_and_thresholds: true
+  source_substitution_requires_user_approval: true
+  threshold_change_requires_user_approval: true
+  disease_or_species_change_requires_user_approval: true
+  required_browser_evidence:
+    - "query text or uploaded gene-list hash"
+    - "selected database record or result page"
+    - "filters and species"
+    - "source URL"
+    - "access date"
+    - "exported file or screenshot when permitted"
+
+figures:
+  formats:
+    - "png"
+    - "pdf"
+  dpi: 600
+  width: null
+  height: null
+  font_family: ""
+  language: "zh-CN"
+  style_reference: ""
+
+provenance:
+  database_access_dates: {}
+  software_versions: {}
+  user_confirmed_decisions: []
+  proposed_defaults_accepted: []

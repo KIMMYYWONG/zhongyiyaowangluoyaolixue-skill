@@ -1,0 +1,10 @@
+Theme,Keyword,Scope,Notes
+Bone_remodeling,osteoclast,GO|KEGG,Example theme; retain only if actually enriched
+Bone_remodeling,osteoblast,GO|KEGG,Example theme; retain only if actually enriched
+Bone_remodeling,bone resorption,GO|KEGG,Example theme; retain only if actually enriched
+Inflammation,TNF,GO|KEGG,Example theme; retain only if actually enriched
+Inflammation,IL-17,GO|KEGG,Example theme; retain only if actually enriched
+Innate_immunity,Toll-like receptor,GO|KEGG,Example theme; retain only if actually enriched
+Adaptive_immunity,Th17,GO|KEGG,Example theme; retain only if actually enriched
+Cellular_aging,cellular senescence,GO|KEGG,Example theme; retain only if actually enriched
+Stress_metabolism,FoxO,GO|KEGG,Example theme; retain only if actually enriched

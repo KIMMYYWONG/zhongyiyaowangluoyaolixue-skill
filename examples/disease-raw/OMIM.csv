@@ -1,0 +1,4 @@
+Gene_symbol,Evidence_type,Is_curated,Disease_id,Disease_name
+AKT1,known gene,true,D0001,Synthetic disease
+TP53,molecular basis,true,D0001,Synthetic disease
+MAPK1,known gene,true,D0001,Synthetic disease

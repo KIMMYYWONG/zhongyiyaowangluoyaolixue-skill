@@ -1,0 +1,5 @@
+source,source_herb_id,source_ingredient_id,compound_key,target_name_raw,target_id_raw,evidence_type,evidence_reference,herb_selection_tier,source_url,access_date
+TCMSP,H001,MOL001,PUBCHEM:1111,Protein kinase B alpha,P31749,database,,,https://example.invalid/tcmsp/target1,2026-08-24
+TCMSP,H001,MOL002,PUBCHEM:9999,Tumor protein p53,P04637,database,,,https://example.invalid/tcmsp/target2,2026-08-24
+SYMMAP,SMHB001,ING001,PUBCHEM:2222,Tumor necrosis factor,P01375,database,,,https://example.invalid/symmap/target1,2026-08-24
+HERB2,HB001,HERBING001,PUBCHEM:3333,Interleukin-6,P05231,literature,PMID:12345678,representative_ingredient_target,https://example.invalid/herb/target1,2026-08-24

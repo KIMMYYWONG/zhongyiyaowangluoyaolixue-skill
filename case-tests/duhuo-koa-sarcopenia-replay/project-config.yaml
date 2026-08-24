@@ -1,0 +1,56 @@
+project:
+  id: "duhuo-koa-sarcopenia-replay"
+  label: "独活寄生汤-KOA-肌少症共病网络药理学回放"
+  intended_use: "skill validation and methods reproducibility"
+  output_language: "zh-CN"
+
+research_object:
+  formula_name: "独活寄生汤"
+  herbs: ["白芍", "川芎", "当归", "独活", "杜仲", "防风", "茯苓", "甘草", "干地黄", "牛膝", "秦艽", "人参", "肉桂", "桑寄生", "细辛"]
+  disease_queries: ["Knee Osteoarthritis", "Sarcopenia"]
+  comorbidity_rule: "intersection of independently screened KOA and sarcopenia target sets"
+  species_name: "Homo sapiens"
+  species_taxon: 9606
+
+data_state:
+  drug_side: "legacy imported compound-target and unique-target snapshot; Stage 01 DNP audit remains separate"
+  disease_side: "user-supplied already-filtered per-source exports"
+  raw_files_are_immutable: true
+
+disease_targets:
+  available_sources: ["GeneCards", "CTD", "OpenTargets", "DisGeNET"]
+  unavailable_in_case_folder: ["DrugBank", "OMIM"]
+  imported_filtered_policy: "retain all supplied rows within each already-filtered export"
+  broad_set_rule: "union of imported filtered sources"
+  recommended_set_rule: "support from at least two supplied databases"
+  comorbidity_input_set: "broad_candidate"
+
+drug_targets:
+  imported_target_file: "01_raw/drug/legacy_unique_drug_targets.csv"
+  compound_name_authority_status: "DNP audit pending for full 15-herb source table"
+
+ppi:
+  source: "STRING"
+  species_taxon: 9606
+  required_score: 400
+  add_neighbor_nodes: 0
+  cytoscape_mode: "undirected"
+  core_rule: "Betweenness > median AND Closeness > median AND Degree > median"
+
+enrichment:
+  method: "clusterProfiler"
+  run_sets: ["drug-comorbidity intersection", "Cytoscape core targets"]
+  p_adjust_method: "BH"
+  display_raw_p_cutoff: 0.05
+  go_top_n: 15
+  kegg_top_n: 30
+
+network:
+  validation_modes: ["complete", "filtered"]
+  published_mode: "pending user choice"
+
+provenance:
+  case_source_root: "C:/Users/Administrator/Desktop/网药"
+  replay_date: "2026-08-24"
+  original_files_modified: false
+

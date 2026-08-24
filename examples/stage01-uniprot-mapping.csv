@@ -1,0 +1,5 @@
+target_name_raw,uniprot_accession,gene_symbol_primary,reviewed_status,organism_result,mapping_status,mapping_note
+Protein kinase B alpha,P31749,AKT1,reviewed,Homo sapiens (9606),exact,
+Tumor protein p53,P04637,TP53,reviewed,Homo sapiens (9606),exact,
+Tumor necrosis factor,P01375,TNF,reviewed,Homo sapiens (9606),exact,
+Interleukin-6,P05231,IL6,reviewed,Homo sapiens (9606),exact,

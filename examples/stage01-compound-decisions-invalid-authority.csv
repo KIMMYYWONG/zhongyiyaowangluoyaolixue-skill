@@ -1,0 +1,5 @@
+compound_key,compound_name_preferred,name_authority,include_compound,include_reason
+PUBCHEM:1111,Compound alpha,PubChem,TRUE,invalid synthetic authority test
+PUBCHEM:9999,Compound excluded,PubChem,FALSE,excluded by TCMSP rule
+PUBCHEM:2222,Compound beta,PubChem,TRUE,invalid synthetic authority test
+PUBCHEM:3333,Compound gamma,PubChem,TRUE,invalid synthetic authority test

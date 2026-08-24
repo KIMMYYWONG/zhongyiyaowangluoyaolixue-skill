@@ -1,0 +1,4 @@
+interface:
+  display_name: "Network Pharmacology Research"
+  short_description: "Run auditable TCM network pharmacology workflows"
+  default_prompt: "Use $network-pharmacology-research to run or review a staged formula, disease, or comorbidity network pharmacology study with traceable screening, QC, and figures."

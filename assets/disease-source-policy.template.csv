@@ -1,0 +1,7 @@
+Data_base,screen_mode,quantile,min_score,curated_keywords,role
+GeneCards,median_score,0.5,,"curated|direct",integrated disease relevance
+CTD,curated_or_median_score,0.5,,"curated|direct marker/mechanism|therapeutic",toxicogenomic and curated disease evidence
+OpenTargets,median_score,0.5,,"direct",target-disease association ranking
+DisGeNET,curated_or_median_score,0.5,,"curated|expert curated",gene-disease association evidence
+OMIM,curated_all,,,"molecular basis|known gene|curated",curated genetic disease evidence
+DrugBank,curated_all,,,"indicated|action target|target",therapeutic target supplement

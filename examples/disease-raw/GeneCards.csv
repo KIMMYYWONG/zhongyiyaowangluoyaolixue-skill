@@ -1,0 +1,4 @@
+Gene_symbol,Score,Evidence_type,Is_curated,Disease_id,Disease_name
+AKT1,0.90,integrated,false,D0001,Synthetic disease
+TP53,0.60,integrated,false,D0001,Synthetic disease
+EGFR,0.20,integrated,false,D0001,Synthetic disease

@@ -1,0 +1,15 @@
+Theme,Keyword,Scope,Notes
+Cartilage_and_joint,cartilage,GO|KEGG,KOA interpretation retrieval only
+Cartilage_and_joint,extracellular matrix,GO|KEGG,KOA interpretation retrieval only
+Cartilage_and_joint,osteoarthritis,GO|KEGG,KOA interpretation retrieval only
+Inflammation,TNF,GO|KEGG,Shared inflammatory mechanism retrieval
+Inflammation,IL-17,GO|KEGG,Shared inflammatory mechanism retrieval
+Innate_immunity,Toll-like receptor,GO|KEGG,Shared immune mechanism retrieval
+Muscle_homeostasis,skeletal muscle,GO|KEGG,Sarcopenia interpretation retrieval only
+Muscle_homeostasis,muscle atrophy,GO|KEGG,Sarcopenia interpretation retrieval only
+Muscle_homeostasis,myogenesis,GO|KEGG,Sarcopenia interpretation retrieval only
+Protein_turnover,ubiquitin,GO|KEGG,Sarcopenia interpretation retrieval only
+Protein_turnover,autophagy,GO|KEGG,Sarcopenia interpretation retrieval only
+Metabolic_signaling,insulin,GO|KEGG,Shared metabolic mechanism retrieval
+Cellular_aging,cellular senescence,GO|KEGG,Shared aging mechanism retrieval
+Stress_response,FoxO,GO|KEGG,Shared stress mechanism retrieval

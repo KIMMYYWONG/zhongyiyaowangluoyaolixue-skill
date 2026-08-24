@@ -1,0 +1,4 @@
+Gene_symbol,Score,Evidence_type,Is_curated,Disease_id,Disease_name
+TP53,0.20,curated marker,true,D0001,Synthetic disease
+IL6,0.80,inferred,false,D0001,Synthetic disease
+MAPK1,0.40,inferred,false,D0001,Synthetic disease
